@@ -112,7 +112,6 @@ export default function HighlightReelModal({ text, onClose }: Props) {
             style={{
               padding: '8px 20px',
               borderRadius: '8px',
-              border: 'none',
               background: copied ? 'var(--green-soft)' : 'var(--accent)',
               color: copied ? 'var(--green)' : '#fff',
               fontSize: '13px',
