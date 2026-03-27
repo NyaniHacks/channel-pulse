@@ -1,5 +1,9 @@
 # Channel Pulse
 
+![Next.js](https://img.shields.io/badge/Next.js-14-black)
+![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-Styled-38BDF8)
+![Demo Mode](https://img.shields.io/badge/Demo-Fallback%20Ready-success)
 
 > Paste a YouTube channel URL. Get instant 30-day performance insights.
 
