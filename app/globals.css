@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --bg: #0a0a0f;
+  --bg-card: #111118;
+  --bg-card-hover: #16161f;
+  --bg-input: #0f0f16;
+  --border: rgba(255, 255, 255, 0.07);
+  --border-focus: rgba(255, 255, 255, 0.18);
+  --text-primary: #f0eff8;
+  --text-secondary: #8b8aa0;
+  --text-tertiary: #52516a;
+  --accent: #7c6af7;
+  --accent-soft: rgba(124, 106, 247, 0.12);
+  --accent-glow: rgba(124, 106, 247, 0.25);
+  --green: #3ecf8e;
+  --green-soft: rgba(62, 207, 142, 0.1);
+  --red: #f87171;
+  --red-soft: rgba(248, 113, 113, 0.1);
+  --amber: #fbbf24;
+  --amber-soft: rgba(251, 191, 36, 0.1);
+  --score-high: #3ecf8e;
+  --score-mid: #fbbf24;
+  --score-low: #f87171;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+/* Subtle grid texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-focus); border-radius: 99px; }
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 var(--accent-glow); }
+  50% { box-shadow: 0 0 0 6px transparent; }
+}
+
+.fade-up {
+  animation: fadeUp 0.4s ease both;
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 0%,
+    rgba(255,255,255,0.04) 50%,
+    var(--bg-card) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 6px;
+}
