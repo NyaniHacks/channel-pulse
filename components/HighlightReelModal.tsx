@@ -120,7 +120,7 @@ export default function HighlightReelModal({ text, onClose }: Props) {
               cursor: 'pointer',
               fontFamily: 'var(--font-sans)',
               transition: 'all 0.2s',
-              border: copied ? '1px solid var(--green)' : 'none',
+              border: copied ? '1px solid var(--green)' : '1px solid var(--border)',
             }}
           >
             {copied ? '✓ Copied!' : 'Copy to clipboard'}
